@@ -99,7 +99,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
-.inspire-tree [type="checkbox"] {
+/* .inspire-tree [type="checkbox"] {
     left: 22px;
     position: absolute;
     top: 50%;
@@ -107,7 +107,7 @@
     vertical-align: middle;
     width: 20px;
     z-index: 2;
-}
+} */
 .inspire-tree .title,
 .inspire-tree .node {
     cursor: default;

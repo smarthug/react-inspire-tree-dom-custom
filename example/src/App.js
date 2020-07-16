@@ -28,24 +28,24 @@ function Main(props) {
     // const classes = dockBackground();
     const treeNode = useRef();
 
-    const load = () => {
-        console.log(Instance);
-        // var node = Instance.get(1).get(2).get(0)
-        var node = Instance.get(1);
-        console.log(node);
-        var chil = node.getChildren()[2];
-        console.log(chil);
-        var bolt = chil.getChildren()[0];
-        console.log(bolt);
+    // const load = () => {
+    //     console.log(Instance);
+    //     // var node = Instance.get(1).get(2).get(0)
+    //     var node = Instance.get(1);
+    //     console.log(node);
+    //     var chil = node.getChildren()[2];
+    //     console.log(chil);
+    //     var bolt = chil.getChildren()[0];
+    //     console.log(bolt);
 
-        // 이걸로 ???
-        bolt.reload();
-        bolt.expand();
-        // 고의 적 인보크 ....
-        // data 함수의 ,
-        // 어떻게 특정 노드를 특정할것인가 ?
-        //bolt.loadChildren()
-    };
+    //     // 이걸로 ???
+    //     bolt.reload();
+    //     bolt.expand();
+    //     // 고의 적 인보크 ....
+    //     // data 함수의 ,
+    //     // 어떻게 특정 노드를 특정할것인가 ?
+    //     //bolt.loadChildren()
+    // };
 
     function createInstance(params = {}) {
         let { data, config, columns } = props;
@@ -55,6 +55,7 @@ function Main(props) {
         if (params.columns) columns = params.columns;
 
         Instance = new InspireTree({
+            
             data: (node, resolve, reject) => {
                 console.log(node);
                 var id = node ? node.id : "root";

@@ -113,6 +113,7 @@ class NodeAnchor extends React.Component {
         }
 
         let content = node.text;
+        // content = content + "     -0"
         if (node.editing()) {
             content = <EditForm dom={this.props.dom} node={this.props.node} />;
         }
@@ -126,8 +127,12 @@ class NodeAnchor extends React.Component {
                 onDoubleClick={this.dblclick}
                 onFocus={this.focus}
                 onMouseDown={this.mousedown}
+                // style={{  display: "inline" }}
+                style={{  paddingLeft: "24px" }}
                 {...attributes}>
                 {content}
+                
+
             </a>
         );
     }

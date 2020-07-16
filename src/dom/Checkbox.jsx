@@ -1,4 +1,7 @@
 import React from "react";
+import CheckboxM from '@material-ui/core/Checkbox'
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityBorder from '@material-ui/icons/VisibilityOffOutlined';
 
 class Checkbox extends React.Component {
     constructor(props) {
@@ -39,17 +42,54 @@ class Checkbox extends React.Component {
 
     render() {
         const { node } = this.props;
+        if(!node.layer){
+            node.layer = 0
+        }
         return (
-            <input
+           
+            <React.Fragment>
+                <CheckboxM
+
+                    style={{
+                        // marginLeft: "20px",
+                        padding: "0px",
+                        position: "absolute",
+                        right: "25px"
+                    }}
+
+                    icon={<Visibility />}
+                    checkedIcon={<VisibilityBorder />}
+                    name="checkedI"
+                    ref={el => {
+                        this.el = el;
+                    }}
+
+                    checked={node.checked()}
+                    onClick={this.click}
+                />
+
+                   <span style={{
+                        // marginLeft: "20px",
+                        padding: "3px",
+                        position: "absolute",
+                        right: "5px"
+                   }}>{node.layer}</span>
+           </React.Fragment>
+
+        );
+    }
+}
+
+export default Checkbox;
+
+// () => {myFunc(); return node.checked()}
+
+
+{/* <input
                 ref={el => {
                     this.el = el;
                 }}
                 type="checkbox"
                 checked={node.checked()}
                 onClick={this.click}
-            />
-        );
-    }
-}
-
-export default Checkbox;
+            /> */}
